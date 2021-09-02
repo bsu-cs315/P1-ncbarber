@@ -32,7 +32,7 @@ points = PoolVector2Array( 74, 73, 0, 73, 0, 0, 74, 0 )
 [node name="Level" type="Node2D"]
 
 [node name="Ball" parent="." instance=ExtResource( 1 )]
-position = Vector2( 168.57, 275.23 )
+position = Vector2( 92.1563, 410.078 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
