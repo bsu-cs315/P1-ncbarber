@@ -10,15 +10,31 @@ func _process(delta):
 		var exit_angle = Vector2.RIGHT.rotated(deg2rad(_angle))
 		var impulse = exit_angle * exit_speed
 		apply_impulse(Vector2.ZERO, impulse)
+		$ArrowRotation.visible = false
 	if Input.is_action_pressed("increase angle"):
 		_angle -= degrees_per_second * delta
-		print(_angle)
+		_angle = clamp(_angle, -90, 0)
+		#print(_angle)
+		update_arrow_angle(_angle)
 	if Input.is_action_pressed("decrease angle"):
 		_angle += degrees_per_second * delta
-		print(_angle)
+		_angle = clamp(_angle, -90, 0)
+		#print(_angle)
+		update_arrow_angle(_angle)
 	if Input.is_action_pressed("increase power"):
 		exit_speed += power* delta
-		print(exit_speed)
+		exit_speed = clamp(exit_speed, 0, 900)
+		#print(exit_speed)
+		update_arrow_power(exit_speed)
 	if Input.is_action_pressed("decrease power"):
 		exit_speed -= power * delta
-		print(exit_speed)
+		exit_speed = clamp(exit_speed, 0, 900)
+		#print(exit_speed)
+		update_arrow_power(exit_speed)
+
+		
+func update_arrow_angle(exit_angle):
+	$ArrowRotation.rotation_degrees = exit_angle
+
+func update_arrow_power(speed):
+	$ArrowRotation/Arrow.offset.x = speed * 0.1
