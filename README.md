@@ -27,6 +27,9 @@ From this project, and this iteration, what I found the most interesting was the
 - [X] A-2: There is a visual indicator showing the angle at which the projectile will fire.
 - [X] A-3: The projectile's hitting the target is recognized and logged to the console or otherwise indicated.
 
+
+After looking through the evaluation and looking at it compared to my project I think that I did good work. I think that I did everything that was required to get an A. Even though there were a few hiccups, there wasn't anything in the list that I could see that I did not have added. 
+
 ## Third-Party Resources
 
 - [Kenny's Physics Assets Pack](https://kenney.nl/assets/physics-assets), licensed under 
