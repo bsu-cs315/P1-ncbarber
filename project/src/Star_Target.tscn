@@ -9,6 +9,7 @@ radius = 30.25
 [node name="Star_Target" type="RigidBody2D" groups=[
 "Target",
 ]]
+contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 2 )
 
