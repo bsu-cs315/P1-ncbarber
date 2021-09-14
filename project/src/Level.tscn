@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sounds/351810__plasterbrain__shooting-star-4.wav" type="AudioStream" id=1]
 [ext_resource path="res://assets/woodblock.png" type="Texture" id=2]
@@ -46,6 +46,10 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
 size = 48
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 52
 font_data = ExtResource( 5 )
 
 [node name="Level" type="Node2D"]
@@ -106,6 +110,15 @@ margin_bottom = 69.4695
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "ScoreLabel"
+
+[node name="FinalScore" type="Label" parent="HUD"]
+margin_left = 350.208
+margin_top = 94.2868
+margin_right = 605.208
+margin_bottom = 155.287
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Final Score"
 
 [node name="StarSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

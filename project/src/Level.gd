@@ -11,10 +11,22 @@ func _ready():
 
 func _process(_delta):
 	if _aliens_left > 0:
+		$HUD/FinalScore.visible = false
+		$HUD/Score.visible = true
+		$HUD/AliensCount.visible = true
+		$HUD/Angle.visible = true
+		$HUD/Power.visible = true
 		var _power = $Ball.get_power()
 		var _angle = $Ball.get_angle()
 		on_Power_update(_power)
 		on_Angle_update(_angle)
+	elif _aliens_left == 0:
+		$HUD/FinalScore.visible = true
+		$HUD/Score.visible = false
+		$HUD/AliensCount.visible = false
+		$HUD/Angle.visible = false
+		$HUD/Power.visible = false
+		$HUD/FinalScore.text = "GAME OVER\nFinal Score: " + str(_score)
 	$HUD/AliensCount.text = "Aliens Left: " + str(_aliens_left)
 	$HUD/Score.text = "Score: " + str(_score)
 	if Input.is_action_just_pressed("restart"):
