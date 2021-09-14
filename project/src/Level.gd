@@ -7,7 +7,7 @@ func _process(_delta):
 	if _aliens_left > 0:
 		var _power = $Ball.get_power()
 		var _angle = $Ball.get_angle()
-		#on_Power_update(_power)
+		on_Power_update(_power)
 		on_Angle_update(_angle)
 	$HUD/AliensCount.text = "Aliens Left: " + str(_aliens_left)
 	$HUD/Score.text = "Score: " + str(_score)
@@ -15,8 +15,8 @@ func _process(_delta):
 		restart()
 
 
-#func on_Power_update(new_power):
-	
+func on_Power_update(new_power):
+	$HUD/Power.text = "Power: %d" % int(new_power / 9) + "%"
 
 func on_Angle_update(new_angle):
 	$HUD/Angle.text = "Angle: " + str(int(-new_angle)) + "°"

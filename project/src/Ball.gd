@@ -6,7 +6,7 @@ signal power_changed(new_power)
 var _angle = 0
 export var degrees_per_second = 20
 export var _power = 200
-export var _exit_speed = 100
+export var _exit_speed = 0
 
 func _process(delta):
 	if Input.is_action_just_pressed("launch"):
@@ -45,7 +45,7 @@ func _process(delta):
 		
 		
 func get_power():
-	return _power
+	return _exit_speed
 	
 func get_angle():
 	return _angle
