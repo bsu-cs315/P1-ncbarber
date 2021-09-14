@@ -34,15 +34,22 @@ func _process(delta):
 		_exit_speed += _power* delta
 		_exit_speed = clamp(_exit_speed, 0, 900)
 		emit_signal("power_changed", _power)
-		update_arrow_power(_exit_speed)
+		#update_arrow_power(_exit_speed)
 		
 		
 	if Input.is_action_pressed("decrease power"):
 		_exit_speed -= _power * delta
 		_exit_speed = clamp(_exit_speed, 0, 900)
 		emit_signal("power_changed", _power)
-		update_arrow_power(_exit_speed)
+		#update_arrow_power(_exit_speed)
 		
+		
+func get_power():
+	return _power
+	
+func get_angle():
+	return _angle
+
 func update_arrow_angle(exit_angle):
 	$ArrowRotation.rotation_degrees = exit_angle
 

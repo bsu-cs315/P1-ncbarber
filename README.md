@@ -37,3 +37,5 @@ After looking through the evaluation and looking at it compared to my project I 
 
 - [Kenny's Physics Tanks Pack](https://kenney.nl/assets/tanks), licensed under 
 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+- [Jonas Hecksher's Play Font](https://fonts.google.com/specimen/Play#standard-styles), licensed under [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
