@@ -14,6 +14,7 @@ func _process(delta):
 		var impulse = exit_angle * _exit_speed
 		apply_impulse(Vector2.ZERO, impulse)
 		$ArrowRotation.visible = false
+		$LaunchSound.play()
 		
 		
 	if Input.is_action_pressed("increase angle"):

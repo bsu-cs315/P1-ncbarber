@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/Ball.gd" type="Script" id=1]
 [ext_resource path="res://assets/happyfunball.png" type="Texture" id=2]
 [ext_resource path="res://assets/tank_arrowEmpty.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/395500__plasterbrain__ufo-flies-away.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 36.2027
@@ -21,3 +22,9 @@ texture = ExtResource( 2 )
 [node name="Arrow" type="Sprite" parent="ArrowRotation"]
 position = Vector2( 84.1456, -0.353554 )
 texture = ExtResource( 3 )
+
+[node name="LaunchSound" type="AudioStreamPlayer" parent="."]
+pause_mode = 1
+stream = ExtResource( 4 )
+volume_db = -21.102
+pitch_scale = 0.71

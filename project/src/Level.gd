@@ -48,12 +48,9 @@ func on_Power_update(new_power):
 func on_Angle_update(new_angle):
 	$HUD/Angle.text = "Angle: " + str(int(-new_angle)) + "°"
 
-func _on_Star_Target_entered(_body):
-	print("Hit!")
-	
 	
 func _on_star_hit(alien, star):
-	print("hit")
+	$StarSound.play()
 	if alien == $Ball:
 		_star_hit = true
 		call_deferred("remove_child", alien)

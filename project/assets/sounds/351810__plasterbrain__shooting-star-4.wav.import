@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/351810__plasterbrain__shooting-star-4.wav-3cfbc17e198a4918e11928e1ef76ce70.sample"
+
+[deps]
+
+source_file="res://assets/sounds/351810__plasterbrain__shooting-star-4.wav"
+dest_files=[ "res://.import/351810__plasterbrain__shooting-star-4.wav-3cfbc17e198a4918e11928e1ef76ce70.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

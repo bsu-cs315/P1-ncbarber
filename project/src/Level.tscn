@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
+[ext_resource path="res://assets/sounds/351810__plasterbrain__shooting-star-4.wav" type="AudioStream" id=1]
 [ext_resource path="res://assets/woodblock.png" type="Texture" id=2]
-[ext_resource path="res://src/Star_Target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/colored_land.png" type="Texture" id=4]
 [ext_resource path="res://assets/fonts/Play-Regular.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://src/Level.gd" type="Script" id=6]
@@ -61,10 +61,6 @@ tile_set = SubResource( 2 )
 format = 1
 tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, 65535, 0, 0, 16, 0, 0, 131071, 0, 0, 65552, 0, 0, 196607, 0, 0, 131088, 0, 0, 262143, 0, 0, 196619, 0, 0, 196620, 0, 0, 196621, 0, 0, 196622, 0, 0, 196624, 0, 0, 327679, 0, 0, 262151, 0, 0, 262160, 0, 0, 393215, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 327696, 0, 0, 458751, 0, 0, 393216, 0, 0, 393217, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393232, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0 )
 
-[node name="Star_Target" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 685.632, 348.246 )
-
 [node name="HUD" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -111,4 +107,5 @@ custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "ScoreLabel"
 
-[connection signal="body_entered" from="Star_Target" to="." method="_on_Star_Target_entered"]
+[node name="StarSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
