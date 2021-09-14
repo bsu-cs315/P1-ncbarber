@@ -1,10 +1,20 @@
-# Project 1 Iteration 1
+# Project 1 Iteration 2
 
 ## How to Play
-To play this game, there are some very basic controls. Use the up and down arrows (or W for up and S for down) to control the angle at which the character launches. Then you can use the left arrow (or A) to decrease the power, or the right arrow (or D) to increase. The arrow will move and indicate power and angle. Once you get it to the angle and power you think works, hit the spacebar to launch!
+
+You are playing as an Alien and you want to collect all of those stars that you have been travelling around the universe to collect!
+
+Controls
+- Angle Up - (Up Arrow or W)
+- Angle Down - (Down Arrow or S)
+- Power Up - (Right Arrow or D)
+- Power Down - (Left Arrow or A)
+- Launch! - (Spacebar)
+- Reset Level - (R)
 
 ## Reflection
-From this project, and this iteration, what I found the most interesting was the implementatoin of having an arrow to show where the character is launching. While playing around with it, it made more sense to create a node with a sprite attached that wouldn't be affected by the gravity or affect the charater sprite and change how it interacts with the rest of level. One thing that was pretty frustrating for me was the use of showing an indication that there was a collision. Funny enough one of the first times I set it up I had it right. I was looking for just a basic message in the console that would tell me that there was a collision. What I found fixed the issue is that I needed to change the Contact Reported. This made it so that everyime there was a collision with the star target, it marks it in the console. If I would have read over the project description a few more times, I probably would have figured that out a bit faster than I did. 
+
+This iteration of the project was definetly a bit more intimidating at first glance. I thought there were things that I might have been done in the last iteratoin that would make it very difficult to get through this iteration. One of those key things was getting things like the Aliens that I have and the stars. I didn't know exactly how to go about making those items that sort of just spawned in. With some look at previous works, and looking at a reset button, it sparked an idea of how to load those scenes of the alien and ball. After getting to a point where I could get these to spawn and despawn everything felt good. The HUD help that we got in class really made things regarding that a lot easier. Other than that I ran into a few issues with sound files. I found that trying to use a small OGG file made it loop even when set to not do so. After I started using WAV files that issue was not present. Its something that I'll have to still see why that is but I was able to work around it. 
 
 ## Self-Evaluation
 
@@ -16,19 +26,18 @@ From this project, and this iteration, what I found the most interesting was the
 - [X] C-3: You have a clear legal right to use all incorporated assets, and the licenses for all third-party assets are tracked in the <code>README.md</code> file.
 - [X] C-4: The <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game itself.
 - [X] C-5: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of T or less.
-- [X] C-6: The player can control the angle at which the projectile is fired.
-- [X] C-7: The player can fire the projectile.
-- [X] C-8: The projectile's flight is affected by gravity using Godot Engine's physics system.
-- [X] C-9: There is a &ldquo;ground&rdquo; that stops the projectile.
-- [X] C-10: There is a non-ground target that the projectile can hit.
+- [X] C-6: The projectile and targets are shown with 2D graphics.
+- [X] C-7: The game plays an appropriate sound effect when the projectile is fired.
 - [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
-- [X] B-2: The projectile's firing angle is clamped between 0&deg; (straight forward) and 90&deg; (straight up).
-- [X] A-1: The player can modify the strength of the projectile's firing.
-- [X] A-2: There is a visual indicator showing the angle at which the projectile will fire.
-- [X] A-3: The projectile's hitting the target is recognized and logged to the console or otherwise indicated.
+- [X] B-2: Earn one star.
+- [X] A-1: Earn three stars.
+- [X] ⭐ The player has a small inventory of projectiles, and only one can be launched at a time.
+- [X] ⭐ The background and ground use 2D graphics.
+- [X] ⭐ A <abbr title="Heads-Up Display">HUD</abbr> shows the current game state such as the score and number of projectiles remaining.
 
-
-After looking through the evaluation and looking at it compared to my project I think that I did good work. I think that I did everything that was required to get an A. Even though there were a few hiccups, there wasn't anything in the list that I could see that I did not have added. 
+When looking through this list for an evaluation I can see that I did everything that I wanted.
+All of the things that I did were needed to get an A.
+Since I was able to get all of the stars, I feel confident saything this is an A level project.
 
 ## Third-Party Resources
 
@@ -39,3 +48,7 @@ After looking through the evaluation and looking at it compared to my project I 
 [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
 
 - [Jonas Hecksher's Play Font](https://fonts.google.com/specimen/Play#standard-styles), licensed under [SIL Open Font License](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL)
+
+- [plasterbrain's Shooting Star 4](https://freesound.org/people/plasterbrain/sounds/351810/), licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+
+- [plasterbrain's UFO Flies Away](https://freesound.org/people/plasterbrain/sounds/395500/), licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
