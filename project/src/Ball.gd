@@ -41,14 +41,14 @@ func _process(delta):
 	if Input.is_action_pressed("increase power"):
 		if _is_launched == false:
 			_exit_speed += _power* delta
-			_exit_speed = clamp(_exit_speed, 0, 900)
+			_exit_speed = clamp(_exit_speed, 1, 900)
 			emit_signal("power_changed", _power)
 		
 	#When we hit left or A we make the power decrease, and send out the value
 	if Input.is_action_pressed("decrease power"):
 		if _is_launched == false:
 			_exit_speed -= _power * delta
-			_exit_speed = clamp(_exit_speed, 0, 900)
+			_exit_speed = clamp(_exit_speed, 1, 900)
 			emit_signal("power_changed", _power)
 		
 		

@@ -4,39 +4,48 @@ var _aliens_left = 5
 var _score = 0
 var _sleep_counter = 0
 var _star_hit = false
+var _game_started = false
 
 #On start spawn in the Alien and Star
 func _ready():
+	$HUD/FinalScore.visible = false
+	$HUD/Score.visible = false
+	$HUD/AliensCount.visible = false
+	$HUD/Angle.visible = false
+	$HUD/Power.visible = false
+	
+func start_game():
 	spawn_alien()
 	spawn_star()
-
+	_game_started = true
 
 func _process(_delta):
+	if _game_started == true:
 	#Every Frame looking for if the amount of aliens launched is at 0
 	#If it is greater than 0 then it will watch to update the HUD
-	if _aliens_left > 0:
-		$HUD/FinalScore.visible = false
-		$HUD/Score.visible = true
-		$HUD/AliensCount.visible = true
-		$HUD/Angle.visible = true
-		$HUD/Power.visible = true
-		var _power = $Ball.get_power()
-		var _angle = $Ball.get_angle()
-		on_Power_update(_power)
-		on_Angle_update(_angle)
-	#If there are no more aliens left it will show the game over screen
-	elif _aliens_left == 0:
-		$HUD/FinalScore.visible = true
-		$HUD/Score.visible = false
-		$HUD/AliensCount.visible = false
-		$HUD/Angle.visible = false
-		$HUD/Power.visible = false
-		$HUD/FinalScore.text = "GAME OVER\nFinal Score: " + str(_score)
-	$HUD/AliensCount.text = "Aliens Left: " + str(_aliens_left)
-	$HUD/Score.text = "Score: " + str(_score)
-	#Simple Restart Button "R"
-	if Input.is_action_just_pressed("restart"):
-		restart()
+		if _aliens_left > 0:
+			$HUD/FinalScore.visible = false
+			$HUD/Score.visible = true
+			$HUD/AliensCount.visible = true
+			$HUD/Angle.visible = true
+			$HUD/Power.visible = true
+			var _power = $Ball.get_power()
+			var _angle = $Ball.get_angle()
+			on_Power_update(_power)
+			on_Angle_update(_angle)
+		#If there are no more aliens left it will show the game over screen
+		elif _aliens_left == 0:
+			$HUD/FinalScore.visible = true
+			$HUD/Score.visible = false
+			$HUD/AliensCount.visible = false
+			$HUD/Angle.visible = false
+			$HUD/Power.visible = false
+			$HUD/FinalScore.text = "GAME OVER\nFinal Score: " + str(_score)
+		$HUD/AliensCount.text = "Aliens Left: " + str(_aliens_left)
+		$HUD/Score.text = "Score: " + str(_score)
+		#Simple Restart Button "R"
+		if Input.is_action_just_pressed("restart"):
+			restart()
 
 #When this is called it loads and instance of the Alien at the launch position
 #This also connects the sleeping_state_changed to my function for when the sleeping state is changed
@@ -106,3 +115,9 @@ func on_alien_stop_movement():
 
 func restart():
 	var _restart_game = get_tree().change_scene("res://src/Level.tscn")
+	
+
+func _on_Button_pressed():
+	$HUD/Button.visible = false
+	$HUD/GameLabel.visible = false
+	start_game()
