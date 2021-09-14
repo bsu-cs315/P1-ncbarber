@@ -26,5 +26,5 @@ texture = ExtResource( 3 )
 [node name="LaunchSound" type="AudioStreamPlayer" parent="."]
 pause_mode = 1
 stream = ExtResource( 4 )
-volume_db = -21.102
+volume_db = -13.566
 pitch_scale = 0.71
