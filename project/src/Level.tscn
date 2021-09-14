@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://src/Ball.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/woodblock.png" type="Texture" id=2]
 [ext_resource path="res://src/Star_Target.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/colored_land.png" type="Texture" id=4]
@@ -57,10 +56,6 @@ script = ExtResource( 6 )
 position = Vector2( 516, 192 )
 texture = ExtResource( 4 )
 
-[node name="Ball" parent="." instance=ExtResource( 1 )]
-visible = false
-position = Vector2( 69.5927, 350.208 )
-
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource( 2 )
 format = 1
@@ -68,7 +63,7 @@ tile_data = PoolIntArray( -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -6
 
 [node name="Star_Target" parent="." instance=ExtResource( 3 )]
 visible = false
-position = Vector2( 335.424, 393.145 )
+position = Vector2( 685.632, 348.246 )
 
 [node name="HUD" type="Control" parent="."]
 margin_right = 40.0

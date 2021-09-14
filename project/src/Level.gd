@@ -22,7 +22,7 @@ func _process(_delta):
 
 func spawn_alien():
 	var alien : RigidBody2D = load("res://src/Ball.tscn").instance()
-	#var _alien_connect = alien.connect("sleeping_state_changed", self, "on_alien_stop_movement")
+	var _alien_connect = alien.connect("sleeping_state_changed", self, "on_alien_stop_movement")
 	alien.position = Vector2(69, 350)
 	call_deferred("add_child", alien)
 
@@ -30,9 +30,15 @@ func spawn_star():
 	var star : Area2D = load("res://src/Star_Target.tscn").instance()
 	var _star_connect = star.connect("body_entered", self, "_on_star_hit", [star])
 	if _score == 0:
-		star.position = Vector2(865, 157)
-	if _score == 1:
 		star.position = Vector2(335, 393)
+	elif _score == 1:
+		star.position = Vector2(66, 56)
+	elif _score == 2:
+		star.position = Vector2(488, 222)
+	elif _score == 3:
+		star.position = Vector2(865, 157)
+	elif _score == 4:
+		star.position = Vector2(685, 348)
 	call_deferred("add_child", star)
 	_star_hit = false
 
@@ -45,12 +51,12 @@ func on_Angle_update(new_angle):
 func _on_Star_Target_entered(_body):
 	print("Hit!")
 	
-		
-func _on_star_hit(body, star):
+	
+func _on_star_hit(alien, star):
 	print("hit")
-	if body == $Ball:
+	if alien == $Ball:
 		_star_hit = true
-		call_deferred("remove_child", body)
+		call_deferred("remove_child", alien)
 		call_deferred("remove_child", star)
 		_aliens_left -= 1
 		_score += 1
@@ -65,13 +71,13 @@ func _delete_alien():
 	spawn_alien()
 	_sleep_counter = 0
 
-#func on_alien_stop_movement():
-#	_sleep_counter += 1
-#	if _sleep_counter == 4:
-#		if _star_hit == false:
-#			if _aliens_left > 0:
-#				_aliens_left -= 1
-#				_delete_alien()
+func on_alien_stop_movement():
+	_sleep_counter += 1
+	if _sleep_counter == 3:
+		if _star_hit == false:
+			if _aliens_left > 0:
+				_aliens_left -= 1
+				_delete_alien()
 
 func restart():
 	var _restart_game = get_tree().change_scene("res://src/Level.tscn")
