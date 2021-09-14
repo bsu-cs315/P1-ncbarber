@@ -119,6 +119,9 @@ margin_bottom = 155.287
 custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Final Score"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StarSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )

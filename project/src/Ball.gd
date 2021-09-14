@@ -9,6 +9,7 @@ export var _power = 200
 export var _exit_speed = 0
 
 func _process(delta):
+	#When spacebar hit, we launch the alien, play a sound and make the arrow element go invisible
 	if Input.is_action_just_pressed("launch"):
 		var exit_angle = Vector2.RIGHT.rotated(deg2rad(_angle))
 		var impulse = exit_angle * _exit_speed
@@ -16,33 +17,31 @@ func _process(delta):
 		$ArrowRotation.visible = false
 		$LaunchSound.play()
 		
-		
+	#When we hit up or W we make the angle increase, and update the animation, and send out the value
 	if Input.is_action_pressed("increase angle"):
 		_angle -= degrees_per_second * delta
 		_angle = clamp(_angle, -90, 0)
 		emit_signal("angle_changed", _angle)
 		update_arrow_angle(_angle)
 		
-		
+	#When we hit down or S we make the angle decrease, and update the animation, and send out the value
 	if Input.is_action_pressed("decrease angle"):
 		_angle += degrees_per_second * delta
 		_angle = clamp(_angle, -90, 0)
 		emit_signal("angle_changed", _angle)
 		update_arrow_angle(_angle)
 		
-		
+	#When we hit right or D we make the power increase, and send out the value
 	if Input.is_action_pressed("increase power"):
 		_exit_speed += _power* delta
 		_exit_speed = clamp(_exit_speed, 0, 900)
 		emit_signal("power_changed", _power)
-		#update_arrow_power(_exit_speed)
 		
-		
+	#When we hit left or A we make the power decrease, and send out the value
 	if Input.is_action_pressed("decrease power"):
 		_exit_speed -= _power * delta
 		_exit_speed = clamp(_exit_speed, 0, 900)
 		emit_signal("power_changed", _power)
-		#update_arrow_power(_exit_speed)
 		
 		
 func get_power():
@@ -54,8 +53,6 @@ func get_angle():
 func get_ball():
 	return self
 
+#This is for the animation of the arrow
 func update_arrow_angle(exit_angle):
 	$ArrowRotation.rotation_degrees = exit_angle
-
-func update_arrow_power(speed):
-	$ArrowRotation/Arrow.offset.x = speed * 0.1
