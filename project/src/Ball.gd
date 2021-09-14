@@ -50,6 +50,9 @@ func get_power():
 func get_angle():
 	return _angle
 
+func get_ball():
+	return self
+
 func update_arrow_angle(exit_angle):
 	$ArrowRotation.rotation_degrees = exit_angle
 
