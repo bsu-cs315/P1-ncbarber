@@ -3,7 +3,7 @@ extends Node2D
 var _aliens_left = 5
 var _score = 0
 var _sleep_counter = 0
-var _star_hit = false
+var _is_star_hit = false
 
 #On start spawn in the Alien and Star
 func _ready():
@@ -67,7 +67,7 @@ func spawn_star():
 	elif _score == 4:
 		star.position = Vector2(685, 348)
 	call_deferred("add_child", star)
-	_star_hit = false
+	_is_star_hit = false
 
 #Basic updates for the HUD for Power and Angle
 func on_Power_update(new_power):
@@ -81,7 +81,7 @@ func on_Angle_update(new_angle):
 func _on_star_hit(alien, star):
 	$StarSound.play()
 	if alien == $Ball:
-		_star_hit = true
+		_is_star_hit = true
 		call_deferred("remove_child", alien)
 		call_deferred("remove_child", star)
 		_aliens_left -= 1
@@ -103,7 +103,7 @@ func _delete_alien():
 func on_alien_stop_movement():
 	_sleep_counter += 1
 	if _sleep_counter == 3:
-		if _star_hit == false:
+		if _is_star_hit == false:
 			if _aliens_left > 0:
 				_aliens_left -= 1
 				_delete_alien()
